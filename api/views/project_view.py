@@ -8,7 +8,7 @@ from api.serializers.project_serializers import ProjectsListSerializer, \
 class ProjectsListView(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectsListSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
