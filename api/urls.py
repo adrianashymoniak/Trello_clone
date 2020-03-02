@@ -12,12 +12,8 @@ API_TITLE = 'Trello clone api'
 
 docs = get_schema_view(
     openapi.Info(
-        title="Trello clone API",
+        title=API_TITLE,
         default_version='v1',
-        description="Test description",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="BSD License"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -27,7 +23,7 @@ schema_view = include_docs_urls(title=API_TITLE)
 
 urlpatterns = [
     path('projects', ProjectsListView.as_view()),
-    path('projects/<int:pk>/', ProjectDetailView.as_view()),
+    path('projects/<int:projects_id>/', ProjectDetailView.as_view()),
     path('projects/<int:project_id>/columns/', ColumnsListView.as_view()),
     path('projects/<int:project_id>/columns/<int:pk>/',
          ColumnDetailView.as_view()),
