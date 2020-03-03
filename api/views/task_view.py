@@ -15,10 +15,11 @@ class TaskListView(generics.ListCreateAPIView):
         return queryset
 
     def perform_create(self, serializer):
+        serializer.save(project_id=self.kwargs["project_id"])
         serializer.save(author=self.request.user)
 
 
-class TaskDetailView(generics.RetrieveUpdateDestroyAPIView):
+class TaskDetailView(generics.RetrieveDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = (permissions.IsAuthenticated,)

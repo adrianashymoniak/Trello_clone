@@ -18,7 +18,7 @@ class ColumnsListView(generics.ListCreateAPIView):
         serializer.save(project_id=project_id)
 
 
-class ColumnDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ColumnDetailView(generics.RetrieveDestroyAPIView):
     queryset = Column.objects.all()
     serializer_class = ColumnSerializer
     permission_classes = (permissions.IsAuthenticated,)

@@ -23,7 +23,7 @@ schema_view = include_docs_urls(title=API_TITLE)
 
 urlpatterns = [
     path('projects', ProjectsListView.as_view()),
-    path('projects/<int:projects_id>/', ProjectDetailView.as_view()),
+    path('projects/<int:project_id>/', ProjectDetailView.as_view()),
     path('projects/<int:project_id>/columns/', ColumnsListView.as_view()),
     path('projects/<int:project_id>/columns/<int:pk>/',
          ColumnDetailView.as_view()),
