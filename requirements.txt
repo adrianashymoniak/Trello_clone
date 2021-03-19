@@ -7,7 +7,7 @@ Django==3.0.3
 django-ordered-model==3.3.0
 django-rest-auth==0.9.5
 django-rest-framework==0.1.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 drf-yasg==1.17.1
 idna==2.9
 inflection==0.3.1
